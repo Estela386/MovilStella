@@ -1,5 +1,6 @@
 package com.example.myapplication
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
@@ -30,6 +31,8 @@ class MainActivity : AppCompatActivity() {
         binding.loginButton.setOnClickListener({
             if(binding.username.text.toString() == "user" && binding.password.text.toString() == "1234"){
                 Toast.makeText(this, "Login successful.", Toast.LENGTH_SHORT).show()
+                val intent = Intent(this, RegisterActivity::class.java)
+                startActivity(intent)
             }
             else{
                 Toast.makeText(this, "Login went wrong.", Toast.LENGTH_SHORT).show()
