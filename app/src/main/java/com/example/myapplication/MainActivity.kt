@@ -20,6 +20,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var username : EditText
     lateinit var  password : EditText
     lateinit var loginButton : Button
+    lateinit var registerButton : Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,13 +32,17 @@ class MainActivity : AppCompatActivity() {
         binding.loginButton.setOnClickListener({
             if(binding.username.text.toString() == "user" && binding.password.text.toString() == "1234"){
                 Toast.makeText(this, "Login successful.", Toast.LENGTH_SHORT).show()
-                val intent = Intent(this, RegisterActivity::class.java)
-                startActivity(intent)
+//                val intent = Intent(this, RegisterActivity::class.java)
+//                startActivity(intent)
             }
             else{
                 Toast.makeText(this, "Login went wrong.", Toast.LENGTH_SHORT).show()
             }
         })
 
+        binding.registerButton.setOnClickListener({
+            val intent = Intent(this, RegisterActivity::class.java)
+            startActivity(intent)
+        })
     }
 }

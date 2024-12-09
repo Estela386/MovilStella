@@ -65,6 +65,16 @@
                 android:backgroundTint="@color/cinnamon_satin"
                 app:cornerRadius="20dp"/>
 
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="Registro"
+                android:id="@+id/register_button"
+                android:textSize="16sp"
+                android:layout_marginTop="3dp"
+                android:backgroundTint="@color/cinnamon_satin"
+                app:cornerRadius="20dp"/>
+
         </LinearLayout>
         
     </androidx.cardview.widget.CardView>
