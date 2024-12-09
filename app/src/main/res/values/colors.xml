@@ -7,4 +7,9 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="slate_gray">#708090</color>
+    <color name="cinnamon_satin">#B76E79</color>
+    <color name="desert_sand">#D1BBAA</color>
+    <color name="old_lace">#FAF3E0</color>
+    <color name="spanish_gray">#8C9796</color>
 </resources>
