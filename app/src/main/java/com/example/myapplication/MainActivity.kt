@@ -5,22 +5,17 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.setupActionBarWithNavController
-import androidx.navigation.ui.setupWithNavController
 import com.example.myapplication.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
 
-    lateinit var username : EditText
-    lateinit var  password : EditText
-    lateinit var loginButton : Button
-    lateinit var registerButton : Button
+    lateinit var username: EditText
+    lateinit var password: EditText
+    lateinit var loginButton: Button
+    lateinit var registerButton: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,20 +24,26 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.loginButton.setOnClickListener({
-            if(binding.username.text.toString() == "user" && binding.password.text.toString() == "1234"){
+        // Initialize views after setContentView
+        username = binding.username
+        password = binding.password
+        loginButton = binding.loginButton
+        registerButton = binding.registerButton
+
+        binding.loginButton.setOnClickListener {
+//            if (binding.username.text.toString() == UserData.email && binding.password.text.toString() == UserData.password) {
+            if (binding.username.text.toString() == "a" && binding.password.text.toString() == "a") {
                 Toast.makeText(this, "Login successful.", Toast.LENGTH_SHORT).show()
-//                val intent = Intent(this, RegisterActivity::class.java)
-//                startActivity(intent)
-            }
-            else{
+                val intent = Intent(this, MenuuActivity::class.java) // Ensure MenuActivity exists
+                startActivity(intent)
+            } else {
                 Toast.makeText(this, "Login went wrong.", Toast.LENGTH_SHORT).show()
             }
-        })
+        }
 
-        binding.registerButton.setOnClickListener({
+        binding.registerButton.setOnClickListener {
             val intent = Intent(this, RegisterActivity::class.java)
             startActivity(intent)
-        })
+        }
     }
 }

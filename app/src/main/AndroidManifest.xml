@@ -23,6 +23,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".RegisterActivity"></activity>
+        <activity android:name=".MenuuActivity" android:exported="true">
+        </activity>
     </application>
 
 </manifest>
