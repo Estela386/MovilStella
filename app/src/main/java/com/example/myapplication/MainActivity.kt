@@ -7,6 +7,7 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.myapplication.databinding.ActivityMainBinding
+import java.util.regex.Pattern
 
 class MainActivity : AppCompatActivity() {
 
@@ -30,9 +31,14 @@ class MainActivity : AppCompatActivity() {
         loginButton = binding.loginButton
         registerButton = binding.registerButton
 
+        fun isValidEmail(email: String): Boolean {
+            val emailRegex = "^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$"
+            return Pattern.compile(emailRegex).matcher(email).matches()
+        }
+
         binding.loginButton.setOnClickListener {
-//            if (binding.username.text.toString() == UserData.email && binding.password.text.toString() == UserData.password) {
-            if (binding.username.text.toString() == "a" && binding.password.text.toString() == "a") {
+            if (binding.username.text.toString() == UserData.email && binding.password.text.toString() == UserData.password) {
+//            if (binding.username.text.toString() == "a" && binding.password.text.toString() == "a") {
                 Toast.makeText(this, "Login successful.", Toast.LENGTH_SHORT).show()
                 val intent = Intent(this, MenuuActivity::class.java) // Ensure MenuActivity exists
                 startActivity(intent)
